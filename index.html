@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>The new Boston</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--script src="./js/react.js"></script>
+    <script src="./js/JSXTransformer.js"></script>
+    <script src="./js/jquery.min.js"></script-->
+</head>
+<body>
+    <div id='content'></div>
+    <div id='event'></div>
+
+    <script type='text/jsx'>
+        var BillusComponent = React.createClass({
+            doSomething: function() {
+                document.write("The text displaying is: " + this.props.children);
+            },
+            render: function() {
+                return(
+                    <div>
+                    <h3>{this.props.user}</h3>
+                    <a onClick={this.doSomething}>Click Me</a>
+                    </div>
+                );
+            }
+        });
+
+        React.render(
+            <div>
+                <BillusComponent user="Bucky">This guy is awesome</BillusComponent>
+                <BillusComponent user="Kinjal">This chick is fat</BillusComponent>
+            </div>,
+            document.getElementById('content'));
+    </script>
+</body>
+</html>
